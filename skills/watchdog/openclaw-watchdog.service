@@ -1,0 +1,14 @@
+[Unit]
+Description=OpenClaw Gateway Watchdog
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/root/openclaw-watchdog.sh
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
